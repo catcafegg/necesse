@@ -1,0 +1,20 @@
+version: "2.1"
+
+services:
+  necesse:
+    image: catcafegg/necesse
+    environment:
+      - WORLD="DockerServer"
+      - SLOTS=25
+      - OWNER=
+      - MOTD="Welcome To My Necesse Docker Server"
+      - PASSWORD=""
+      - PAUSE=1
+      - GIVECLIENTSPOWER=0
+      - LOGGING=1
+      - ZIPSAVES=1
+    volumes:
+      - ~/necesse/data:/necesse
+    ports:
+      - 14159:14159/udp
+    restart: always
