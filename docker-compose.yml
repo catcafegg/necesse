@@ -5,14 +5,15 @@ services:
     image: catcafegg/necesse
     environment:
       - WORLD="DockerServer"
-      - SLOTS=25
-      - OWNER=
-      - MOTD="Welcome To My Necesse Docker Server"
+      - SLOTS=5               # Max is 250, but game was balanced around 5.
+      - OWNER=                # This gives anyone who logs in with this name admin privledges.
+      - MOTD="Welcome!"
       - PASSWORD=""
-      - PAUSE=1
-      - GIVECLIENTSPOWER=0
+      - PAUSE=1               # 0=World always runs, 1=World pauses when no players are online.
+      - GIVECLIENTSPOWER=1    # 0=Server-Side Position/Hit Check, 1=Client-Side Position/Hit Check.
       - LOGGING=1
       - ZIPSAVES=1
+      - SYSTEMRAM=4096        # System RAM in megabytes allocated to Necesse.  
     volumes:
       - ~/necesse/data:/necesse
     ports:
